@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Facebook Login JavaScript Ejemplo Kannbal</title>
+<title>Facebook Login JavaScript Ejemplo</title>
 <meta charset="UTF-8">
 </head>
 <body>
@@ -52,7 +52,7 @@
   
     function testAPI(data) {                      // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
       console.log('¡Bienvenidos! Obteniendo la información...');
-      FB.api('/me', function(response) {
+      FB.api('/me', { locale: 'en_US', fields: 'name, email' }, function(response) {
         console.log(response,'responseresponseresponse');
         console.log('Ha iniciado sesión: ' + response.name);
         document.getElementById('status').innerHTML ='Hola, ' +
@@ -66,8 +66,6 @@
   <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
   </br>
   <div id="fb-root"></div>
-  </br>
-  <div class="fb-login-button" data-size="large" data-button-type="login_with" data-layout="rounded" data-auto-logout-link="true" data-use-continue-as="true" data-width=""></div>
   </br>
   <div id="status"></div>
   </br>
